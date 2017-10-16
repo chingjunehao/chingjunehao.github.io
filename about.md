@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+published: true
 ---
 I'm a first year undergraduate student currently studying Computer Science at Multimedia University, Malaysia.
 I love travelling around to meet new people and trying out new things.
