@@ -19,11 +19,11 @@ avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/je
 footer-links:
   dribbble:
   email:
-  facebook: https://www.facebook.com/ChingJuneHao
+  facebook: 
   flickr:
-  github: /chingjunehao
+  github:
   instagram:
-  linkedin:https://www.linkedin.com/in/ching-june-hao-716225145/
+  linkedin:
   pinterest:
   rss: # just type anything here for a working RSS icon
   twitter: 
@@ -84,3 +84,4 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+future: true
