@@ -3,13 +3,19 @@ layout: page
 title: About
 permalink: /about/
 ---
+I'm a first year undergraduate student currently studying Computer Science at Multimedia University, Malaysia.
+I love travelling around to meet new people and trying out new things.
+I'm interested in the field of machine learning and deep learning. I have took Machine Learning course that offered by Andrew Ng on Coursera, currently taking fast.ai free course to learn the practical deep learning.
 
-Some information about you!
 
-### More Information
+### Courses I'd highly recommend
 
-A place to include any other types of information that you'd like to include about yourself.
+Learning How to Learn: Powerful mental tools to help you master tough subjects by University of California, San Diego on Coursera
+
+Machine Learning by Andrew Ng on Coursera
+
+
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[junehaoc@gmail.com](mailto:junehaoc@gmail.com)
