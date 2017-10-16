@@ -5,7 +5,9 @@ permalink: /about/
 published: true
 ---
 I'm a first year undergraduate student currently studying Computer Science at Multimedia University, Malaysia.
+
 I love travelling around to meet new people and trying out new things.
+
 I'm interested in the field of machine learning and deep learning. I have took Machine Learning course that offered by Andrew Ng on Coursera, currently taking fast.ai free course to learn the practical deep learning.
 
 
