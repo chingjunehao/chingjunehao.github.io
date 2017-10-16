@@ -8,7 +8,7 @@ I'm a first year undergraduate student currently studying Computer Science at Mu
 
 I love travelling around to meet new people and trying out new things.
 
-I'm interested in the field of machine learning and deep learning. I have took Machine Learning course that offered by Andrew Ng on Coursera, currently taking fast.ai free course to learn the practical deep learning.
+I'm interested in the field of machine learning and deep learning. I have took Machine Learning course that offered by Andrew Ng on Coursera, currently taking [fast.ai](http://www.fast.ai/)to learn the practical deep learning.
 
 
 ### Courses I'd highly recommend
