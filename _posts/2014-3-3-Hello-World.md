@@ -24,5 +24,16 @@ fs
 
 ---
 layout: post
-title: You're up and running!
+title: second thing
 ---
+
+so here's the second post of today. lol
+
+
+
+---
+layout: post
+title: third thing
+---
+so here's the third post of the day yaaaaaa
+
