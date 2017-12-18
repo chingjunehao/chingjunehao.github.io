@@ -126,9 +126,35 @@ Maxpooling in 2D image.
 ![3dMaxpooling](/images/3dmaxpooling.png)  
 Maxpooling in 3D image, which is the one we deal with in real world.  
 
+![Maxpoolingbnw](/images/maxpoolingbnw.png)  
+The function of Pooling is to progressively reduce the spatial size(the length and the width change but not the depth) of the input representation.  
+In particular, pooling:  
+ * Makes the input representations (feature dimension) smaller and more manageable.
+ * Reduces the number of parameters and computations in the network, therefore, controlling overfitting. 
+ * Makes the network invariant to small transformations, distortions and translations in the input image (a small distortion in input will not change the output of Pooling – since we take the maximum/average value in a local neighborhood).
+ * Helps us arrive at an almost scale invariant representation of our image (the exact term is “equivariant”). This is very powerful since we can detect objects in an image no matter where they are located(or no matter how they rotate in the images). [This link explained very well.](https://www.quora.com/How-is-a-convolutional-neural-network-able-to-learn-invariant-features)  
+ 
+### 3. Dropout Layer 
+_(Not in the traditional architecture of CNN but very useful, because helps a lot in fighting overfitting)_  
+  
+The idea of dropout is simplistic in nature. This layer “drops out” a random set of activations in that layer by setting them to zero. Simple as that. Now, what are the benefits of such a simple and seemingly unnecessary and counterintuitive process? Well, in a way, it forces the network to be redundant. By that I mean the network should be able to provide the right classification or output for a specific example even if some of the activations are dropped out. It makes sure that the network isn’t getting too “fitted” to the training data and thus helps alleviate the overfitting problem.  
+An important note is that this layer is only used during training, and not during test time.  
 
- 
- 
+### 5. Network in Network Layer (1X1 convolution)  
+_(Not in the traditional architecture of CNN but very useful, because helps in generating more features, and making network deeper in a computational inexpensive way.)_  
+
+A network in network layer refers to a conv layer where a 1 x 1 size filter is used.   
+1x1 convolutions span a certain depth, so we can think of it as a 1 x 1 x N convolution where N is the number of filters applied in the layer. Effectively, this layer is performing a N-D element-wise multiplication where N is the depth of the input volume into the layer.  
+  
+Example:  
+If the previous layer has 128 feature maps (say) then "1x1 convolutions" are convolutions across all these feature maps with filters each of size 1x1x128. Say one chooses to have 64 of these 1x1x128 dim filters, then the result will be 64 features maps, each the same size as before. View each output feature map as "per-pixel" projections (dot-product) onto a lower dimensional space using a single learned filter (weights tied) across all feature maps. Basically, they just crush 128 feature maps (representational responses to 128 learned filters) into 64 feature maps ignoring the spatial dimension.  
+  
+Remember that larger filters like a 3x3x128 filter would also learn to summarize feature responses across all feature maps so in this way all size filters do the same thing. The only difference is that 1x1 (learned) filters ONLY do this across feature-maps where 3x3 filters (say) also consider local spatial correlations.  
+  
+So, they are used for two reasons:  
+* Dimensionality reduction: 
+ - When performing larger size convolutions (spatial 3x3 or 5x5...) over a large number of feature maps, bringing down the dimensions in depth (# feature maps) reduces computations dramatically. This is done in GoogLeNet Inception modules (2).  
+* Since ReLU will be applied again, it is yet another non-linearity that can be helpful.
  
  
  
