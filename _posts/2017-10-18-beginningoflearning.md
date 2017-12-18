@@ -35,8 +35,8 @@ Playing around with the filter to get the concept of CNN:
 
 > While a grayscale image, has just one channel. The value of each pixel in the matrix will range from 0 to 255 – zero indicating black and 255 indicating white.  
 
-### Feature Learning
-#### 1. Convolution Part
+## Feature Learning
+### 1. Convolution Part
 ![Example of image](/images/convimage.png)  
 _Example of 5x5 image using only 1 and 0 pixel to illustrate_  
 ![Example of filter](/images/convfilter.png)  
@@ -50,7 +50,7 @@ The matrix can also be the color contrast, texture, etc. of the images.
 Convolved feature also called feature maps/activation map.
 This is the process of convolving, which take the **filter** to do element-wise multiplication with the matrix pixel of the image. After convolving, the convolved feature which is the output of the previous layer, will be the input for the next layer. If the pixel in the image match the pixel of the filter, the pixel in convolved feature will be very high, if there's nothing related to the **filter** in the image, then the pixel will be very low in the convolved feature, which is the next layer.  
 
->> _Time takes to run the filter = ((height*width)of image)/stride_  
+> _Time takes to run the filter = ((height*width)of image)/stride_  
 
 Good example to illustrate the working of filter on image.  
 ![Filter on image](/images/filteronimage.png)  
@@ -82,19 +82,51 @@ Padding can preserve the dimension of the imageas well, or in another name - "sa
 > Adding zero-padding is also called wide convolution, and not using zero-padding would be a narrow convolution.  
 Formula:  
 * Same convolution 
-  -Zero padding = (Filter size - 1)/2 (Setting zero padding to be P=(F−1)/2 when the stride is 1 ensures that the input volume and output volume will have the same size spatially.)  
+  -Zero padding = (Filter size - 1)/2 (Get the output (n+2p-f+1) by setting zero padding to be p=(f−1)/2 when the stride is 1 ensures that the input volume and output volume will have the same size spatially.)  
 
 * Output(height/width) = ((Input(height/width)-filterSize+(2*zero-padding))/stride) + 1
 
 > **Constraints on strides.** Note again that the spatial arrangement hyperparameters have mutual constraints. For example, when the input has size W=10, no zero-padding is used P=0, and the filter size is F=3, then it would be impossible to use stride S=2, since (W−F+2P)/S+1=(10−3+0)/2+1=4.5, i.e. **not an integer, indicating that the neurons don’t “fit” neatly and symmetrically across the input.**  
 Therefore, this setting of the hyperparameters is considered to be **invalid**, and a ConvNet library could throw an exception or zero pad the rest to make it fit, or crop the input to make it fit, or something.  
 As we will see in the ConvNet architectures section, sizing the ConvNets appropriately so that all the dimensions “work out” can be a real headache, which the use of zero-padding and some design guidelines will significantly alleviate.  
-Real-world example. The Krizhevsky et al. architecture that won the ImageNet challenge in 2012 accepted images of size [227x227x3]. On the first Convolutional Layer, it used neurons with receptive field size F=11, stride S=4 and no zero padding P=0. Since (227 - 11)/4 + 1 = 55, and since the Conv layer had a depth of K=96, the Conv layer output volume had size [55x55x96]. Each of the 55*55*96 neurons in this volume was connected to a region of size [11x11x3] in the input volume. Moreover, all 96 neurons in each depth column are connected to the same [11x11x3] region of the input, but of course with different weights. As a fun aside, if you read the actual paper it claims that the input images were 224x224, which is surely incorrect because (224 - 11)/4 + 1 is quite clearly not an integer. This has confused many people in the history of ConvNets and little is known about what happened. My own best guess is that Alex used zero-padding of 3 extra pixels that he does not mention in the paper.(From CS231n, Stanford University)
+Real-world example. **The Krizhevsky et al. architecture** that won the _ImageNet challenge in 2012_ accepted images of size [227x227x3]. On the first Convolutional Layer, it used neurons with receptive field size F=11, stride S=4 and no zero padding P=0. Since (227 - 11)/4 + 1 = 55, and since the Conv layer had a depth of K=96, the Conv layer output volume had size [55x55x96]. Each of the 55*55*96 neurons in this volume was connected to a region of size [11x11x3] in the input volume. Moreover, all 96 neurons in each depth column are connected to the same [11x11x3] region of the input, but of course with different weights. As a fun aside, if you read the actual paper it claims that the input images were 224x224, which is surely incorrect because (224 - 11)/4 + 1 is quite clearly not an integer. This has confused many people in the history of ConvNets and little is known about what happened. _My own best guess is that Alex used zero-padding of 3 extra pixels that he does not mention in the paper._(From CS231n, Stanford University)
 
-> According to Andrew Ng, if it's not an integer, we can use floor() function to round it down. 
+> According to Andrew Ng, if it's not an integer, we can use floor() function to round it down.  
+
+#### Number of filter(depth of the layers)
+_Example: Image: 6x6x3, filter: 3x3x3_  
+Channel of filter must be same as the channel of the image, after convolving, will get 4x4xn, n is depends on the number of filter you use, in another words, means that depends on the number of feature detector you use.  
+
+#### Size of the filter
+Size of the filter usually is odd number so that the filter has the "central pixel"/"central vision" so to know the position of the  filter. As if f was even, then you need some asymmetric padding, or it's only f is not that this type of same convolution gives a natural padding. We can pad the same dimension all around them, pad more on the left and pad less on the right or something asymmetric.
  
- 
- 
+### 2. Introducing Non-Linearity, ReLU (Rectified Linear Units) to the Layers
+ > It could be other activation function, but by far ReLU works the best.  
+The ReLU layer applies the function f(x) = max(0, x) to all of the values in the input volume. 
+In basic terms, this layer just changes all the negative activations to 0.  
+![ReLU](/images/ReLU.png)  
+_The reason that we apply non-linearities to the function is that Convolution is a linear operation – element wise matrix multiplication and addition, so we account for non-linearity by introducing a non-linear function like ReLU, prevent from computing the linear function, which will be a bad model._  
+
+
+ReLU helps in solving the vanishing gradient problem, which is a problem when we train the neural network using gradient-based algorithm, like sigmoid, it will squish all the gradient value into 0-1, then when performing the gradient descent, the gradient will be updated very small each time, and the time will take longer to complete.(Learning becomes slow.)[ReLU helps in solving this problem.] (https://www.quora.com/What-is-the-vanishing-gradient-problem)  
+![ReLUimage](/images/ReLUimage.png)
+Other non linear functions such as tanh or sigmoid can also be used instead of ReLU, but ReLU has been found to perform better in most situations.  
+
+### 3. The Pooling Layer  
+Spatial Pooling (also called subsampling or downsampling) reduces the dimensionality of each feature map and retains the most important information of an image. Spatial Pooling can be of different types: Max, Average, Sum etc.  
+  
+Instead of taking the largest element we could also take the average (Average Pooling) of sum of all elements in that window. In practice, Max Pooling has been shown to work better.  
+  
+Max pooling being the most popular. This basically takes a filter (example: size 2x2) and a stride of the same length(which is 2). It then applies it to the input volume and outputs the maximum number in every sub-region that the filter convolves around. The output size formula for the max pooling is same as the convolution one.  
+  
+Max pooling usually doesn't use any padding.  
+**Only hyperparameter here, there's no parameters to learn here.**  
+![Maxpooling](/images/maxpooling.png)  
+Maxpooling in 2D image.  
+![3dMaxpooling](/images/3dmaxpooling.png)  
+Maxpooling in 3D image, which is the one we deal with in real world.  
+
+
  
  
  
