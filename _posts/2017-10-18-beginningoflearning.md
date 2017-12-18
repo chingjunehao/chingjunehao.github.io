@@ -19,7 +19,8 @@ _Picture shows the basic CNN model that proposed by Yann LeCun in 1998, after th
 * [Deeper understanding on CNN by Ujjwal Karn](https://www.kdnuggets.com/2016/11/intuitive-explanation-convolutional-neural-networks.html)
 
 More intense learning on CNN(with code explained):
-* [CS231n by Stanford University](http://cs231n.github.io/convolutional-networks/#conv)
+* [CS231n by Stanford University](http://cs231n.github.io/convolutional-networks/#conv)  
+
 Playing around with the filter to get the concept of CNN:
 * [Image Kernel by Victor Powell](http://setosa.io/ev/image-kernels/)
 
