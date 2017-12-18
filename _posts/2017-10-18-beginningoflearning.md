@@ -12,6 +12,7 @@ _This post is written by summarizing few blog post that explained Convolutional 
 ![LeNet](/images/LeNet.png)  
 _Picture shows the basic CNN model that proposed by Yann LeCun in 1998, after that, all the CNN is built based on it._
 ----
+****
 3 good links that can let beginner to understand CNN easily:
 
 * [Youtube video to have a clear picture of CNN by Brandon Rohrer](https://www.youtube.com/watch?v=FmpDIaiMIeA&t=870s)
@@ -38,7 +39,8 @@ Course I highly recommended:
 [**Channel**](https://en.wikipedia.org/wiki/Channel_(digital_image)) is a conventional term used to refer to a certain component of an image. An image from a standard digital camera will have three channels – red, green and blue(RGB) – you can imagine those as three 2d-matrices stacked over each other (one for each color), each having pixel values in the range 0 to 255.  
 
 > While a grayscale image, has just one channel. The value of each pixel in the matrix will range from 0 to 255 – zero indicating black and 255 indicating white.  
-
+----
+****
 ## Feature Learning
 ### 1. Convolution Part
 ![Example of image](/images/convimage.png)  
@@ -69,7 +71,8 @@ As you can see, there are few types of filter, which to scan through the image a
  * **Padding(Zero-padding)**
  * **Number of filter(depth of the layers)**
  * **Size of the filter**
- ----
+----
+****
  #### Stride
  Stride is the amount of filter shift in the image. The bigger the stride, the smaller the feature map.  
  
@@ -138,7 +141,7 @@ In particular, pooling:
  * Makes the network invariant to small transformations, distortions and translations in the input image (a small distortion in input will not change the output of Pooling – since we take the maximum/average value in a local neighborhood).
  * Helps us arrive at an almost scale invariant representation of our image (the exact term is “equivariant”). This is very powerful since we can detect objects in an image no matter where they are located(or no matter how they rotate in the images). [This link explained very well.](https://www.quora.com/How-is-a-convolutional-neural-network-able-to-learn-invariant-features)  
  
-### 3. Dropout Layer 
+### 4. Dropout Layer 
 _(Not in the traditional architecture of CNN but very useful, because helps a lot in fighting overfitting)_  
   
 The idea of dropout is simplistic in nature. This layer “drops out” a random set of activations in that layer by setting them to zero. Simple as that. Now, what are the benefits of such a simple and seemingly unnecessary and counterintuitive process? Well, in a way, it forces the network to be redundant. By that I mean the network should be able to provide the right classification or output for a specific example even if some of the activations are dropped out. It makes sure that the network isn’t getting too “fitted” to the training data and thus helps alleviate the overfitting problem.  
@@ -163,7 +166,8 @@ So, they are used for two reasons:
   
 Put together the parts and from the feature learning part.   
 ![Featurelearning](/images/featurelearning.png)  
-
+----
+****
 ## Classification
 The output from the convolutional layers represents high-level features in the data.  While that output could be flattened and connected to the output layer, adding a fully-connected layer is a (usually) cheap way of learning non-linear combinations of these features.  
   
@@ -195,7 +199,8 @@ The [Softmax](http://cs231n.github.io/linear-classify/#softmax) function takes a
 
 **Putting the whole Convolutional Neural Networks together:**  
 ![CNN](/images/cnn.png)  
-
+----
+****
   
 
 
