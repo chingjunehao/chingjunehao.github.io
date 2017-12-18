@@ -56,6 +56,49 @@ Good example to illustrate the working of filter on image.
 ![Filter on image](/images/filteronimage.png)  
 As you can see, there are few types of filter, which to scan through the image and convolve to the next layer, which with depth(equal to the number of filters used).  
 
+![Convolution](/images/convolve.gif)  
+ Great animation to explain how the feature detector affect the output and depth of output in the feature map.  
+ For example the first edge detector is "\", it will output the image where the most obvious part of the image will be the part contained edges "\". Same goes to the second edge detector "/".  
+ 
+ ### Parameters that control the behavior of each convolved layer
+ * **Stride**
+ * **Padding(Zero-padding)**
+ * **Number of filter(depth of the layers)**
+ * **Size of the filter**
+ ----
+ #### Stride
+ Stride is the amount of filter shift in the image. The bigger the stride, the smaller the feature map.  
+ 
+ ![Stride1](/images/Stride.png)  
+ Stride = 1.  
+ ![Stride2](/images/Stride2.png)  
+ Stride = 2.
+ 
+ 
+#### Padding(Zero-padding)
+In the early stage, we want to preserve as much information of an image as possible, so we can extract low level features.  
+Padding can preserve the dimension of the imageas well, or in another name - "same convoution".(Example in the image)  
+![Padding](/images/padding.png)  
+> Adding zero-padding is also called wide convolution, and not using zero-padding would be a narrow convolution.  
+Formula:  
+* Same convolution 
+  -Zero padding = (Filter size - 1)/2 (Setting zero padding to be P=(F−1)/2 when the stride is 1 ensures that the input volume and output volume will have the same size spatially.)  
 
+* Output(height/width) = ((Input(height/width)-filterSize+(2*zero-padding))/stride) + 1
 
+> **Constraints on strides.** Note again that the spatial arrangement hyperparameters have mutual constraints. For example, when the input has size W=10, no zero-padding is used P=0, and the filter size is F=3, then it would be impossible to use stride S=2, since (W−F+2P)/S+1=(10−3+0)/2+1=4.5, i.e. **not an integer, indicating that the neurons don’t “fit” neatly and symmetrically across the input.**  
+Therefore, this setting of the hyperparameters is considered to be **invalid**, and a ConvNet library could throw an exception or zero pad the rest to make it fit, or crop the input to make it fit, or something.  
+As we will see in the ConvNet architectures section, sizing the ConvNets appropriately so that all the dimensions “work out” can be a real headache, which the use of zero-padding and some design guidelines will significantly alleviate.  
+Real-world example. The Krizhevsky et al. architecture that won the ImageNet challenge in 2012 accepted images of size [227x227x3]. On the first Convolutional Layer, it used neurons with receptive field size F=11, stride S=4 and no zero padding P=0. Since (227 - 11)/4 + 1 = 55, and since the Conv layer had a depth of K=96, the Conv layer output volume had size [55x55x96]. Each of the 55*55*96 neurons in this volume was connected to a region of size [11x11x3] in the input volume. Moreover, all 96 neurons in each depth column are connected to the same [11x11x3] region of the input, but of course with different weights. As a fun aside, if you read the actual paper it claims that the input images were 224x224, which is surely incorrect because (224 - 11)/4 + 1 is quite clearly not an integer. This has confused many people in the history of ConvNets and little is known about what happened. My own best guess is that Alex used zero-padding of 3 extra pixels that he does not mention in the paper.(From CS231n, Stanford University)
+
+> According to Andrew Ng, if it's not an integer, we can use floor() function to round it down. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
