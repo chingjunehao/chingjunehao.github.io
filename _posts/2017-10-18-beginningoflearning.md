@@ -38,7 +38,7 @@ Playing around with the filter to get the concept of CNN:
 ### Feature Learning
 #### 1. Convolution Part
 ![Example of image](/images/convimage.png)  
-_Example of 5x5 image using only 1 and 0 pixel to illustrate_
+_Example of 5x5 image using only 1 and 0 pixel to illustrate_  
 ![Example of filter](/images/convfilter.png)  
 _Example of 3x3 filter using only 1 and 0 pixel to illustrate_  
 > Think of this 2 image as a matrix with number, 0 act as white and 1 act as black.
