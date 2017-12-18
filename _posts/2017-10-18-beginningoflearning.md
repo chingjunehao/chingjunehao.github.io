@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Understanding Convolutional Neural Networks
+title: Beginner's guide to Understanding Convolutional Neural Networks
 published: true
 comments: true
 permalink: /learningblog/
 category: learning
 ---
 
-_This post is written by summarizing few blog post that explained CNN with adding some of my ideas._
+_This post is written by summarizing few blog post that explained Convolutional Neural Networks with adding some of my ideas._
 
 ![LeNet](/images/LeNet.png)  
 _Picture shows the basic CNN model that proposed by Yann LeCun in 1998, after that, all the CNN is built based on it._
@@ -154,9 +154,46 @@ Remember that larger filters like a 3x3x128 filter would also learn to summarize
 So, they are used for two reasons:  
 * Dimensionality reduction: 
   - When performing larger size convolutions (spatial 3x3 or 5x5...) over a large number of feature maps, bringing down the dimensions in depth (# feature maps) reduces computations dramatically. This is done in GoogLeNet Inception modules (2).  
-* Since ReLU will be applied again, it is yet another non-linearity that can be helpful.
- 
- 
- 
+* Since ReLU will be applied again, it is yet another non-linearity that can be helpful.  
+  
+  
+Put together the parts and from the feature learning part.   
+![Featurelearning](/images/featurelearning.png)  
+
+## Classification
+The output from the convolutional layers represents high-level features in the data.  While that output could be flattened and connected to the output layer, adding a fully-connected layer is a (usually) cheap way of learning non-linear combinations of these features.  
+  
+Essentially the convolutional layers are providing a meaningful, low-dimensional, and somewhat invariant feature space, and the fully-connected layer is learning a (possibly non-linear) function in that space.  
+  
+The whole classification part is a fully connected layer, which starts with **flattening step**, then **fully connected layer**(which is layer full of connections to do classification, also called dense layer) and end with **softmax function**.  
+  
+ANN classifier needs individual features, just like any other classifier. This means it needs a feature vector.  
+
+#### 1. Flattening Step  
+Therefore, you need to convert the output of the convolutional part of the CNN into a 1D feature vector, to be used by the ANN part of it. This operation is called flattening. It gets the output of the convolutional layers, flattens all its structure to create a single long feature vector to be used by the dense layer for the final classification.(Like the long vector in the image below.)  
+  
+![Flattenedvectors](/images/longvectorfeatures.png)  
+A list of features vector which is also a list of weights, depending on the threshold that set early, and classify the object by using FC and softmax function.  
+  
+#### 2. Fully Connected Layer(FC)  
+Neurons in a fully connected layer have full connections to all activations in the previous layer, as seen in regular Neural Networks. (When activations of all nodes in one layer goes to each and every node in the next layer. When all the nodes in the Lth layer connect to all the nodes in the (L+1)th layer we call these layers fully connected layers.)  
+  
+![FClayer](/images/fullyconnectedlayers.jpg)    
+Their activations can hence be computed with a matrix multiplication followed by a bias offset.   
+Apart from classification, adding a fully-connected layer is also a (usually) cheap way of learning non-linear combinations of these features. Most of the features from convolutional and pooling layers may be good for the classification task, but combinations of those features might be even better.  
+  
+**In this layer, where the weight and bias are like in the normal neural network, use cost to compute the loss function, gradient descent to optimize parameters and reduce cost function.**  
+
+#### 3. Softmax function
+The sum of output probabilities from the Fully Connected Layer is 1.  
+This is ensured by using the Softmax as the activation function in the output layer of the Fully Connected Layer.  
+The [Softmax](http://cs231n.github.io/linear-classify/#softmax) function takes a vector of arbitrary real-valued scores and squashes it to a vector of values between zero and one that sum to one.  
+
+**Putting the whole Convolutional Neural Networks together:**  
+![CNN](/images/cnn.png)  
+
+  
+
+
  
 
