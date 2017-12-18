@@ -111,7 +111,7 @@ _The reason that we apply non-linearities to the function is that Convolution is
 ReLU helps in solving the vanishing gradient problem, which is a problem when we train the neural network using gradient-based algorithm, like sigmoid, it will squish all the gradient value into 0-1, then when performing the gradient descent, the gradient will be updated very small each time, and the time will take longer to complete.(Learning becomes slow.)[ReLU helps in solving this problem.] (https://www.quora.com/What-is-the-vanishing-gradient-problem)  
 ![ReLUimage](/images/ReLUimage.png)
 Other non linear functions such as tanh or sigmoid can also be used instead of ReLU, but ReLU has been found to perform better in most situations.  
-
+  
 ### 3. The Pooling Layer  
 Spatial Pooling (also called subsampling or downsampling) reduces the dimensionality of each feature map and retains the most important information of an image. Spatial Pooling can be of different types: Max, Average, Sum etc.  
   
