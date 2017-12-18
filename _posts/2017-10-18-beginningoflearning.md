@@ -10,7 +10,7 @@ category: learning
 _This post is written by summarizing few blog post that explained Convolutional Neural Networks with adding some of my ideas._
 
 ![LeNet](/images/LeNet.png)  
-_Picture shows the basic CNN model that proposed by Yann LeCun in 1998, after that, all the CNN is built based on it._
+_Picture shows the basic CNN model that proposed by Yann LeCun in 1998, after that, all the CNN is built based on it._  
 ----
 ****
 3 good links that can let beginner to understand CNN easily:
