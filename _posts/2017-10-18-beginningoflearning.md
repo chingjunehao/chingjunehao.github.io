@@ -11,7 +11,8 @@ _This post is written by summarizing few blog post that explained Convolutional 
 
 ![LeNet](/images/LeNet.png)  
 _Picture shows the basic CNN model that proposed by Yann LeCun in 1998, after that, all the CNN is built based on it._  
-****
+  
+    
 3 good links that can let beginner to understand CNN easily:
 
 * [Youtube video to have a clear picture of CNN by Brandon Rohrer](https://www.youtube.com/watch?v=FmpDIaiMIeA&t=870s)
