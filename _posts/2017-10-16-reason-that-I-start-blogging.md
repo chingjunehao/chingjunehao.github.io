@@ -6,4 +6,7 @@ comments: true
 ---
 
 
-So, here's the reason why I want to start blogging..
+_Well, start blogging, it will be fun, they said...._  
+  
+  
+
