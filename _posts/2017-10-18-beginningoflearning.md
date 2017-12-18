@@ -50,6 +50,12 @@ The matrix can also be the color contrast, texture, etc. of the images.
 Convolved feature also called feature maps/activation map.
 This is the process of convolving, which take the **filter** to do element-wise multiplication with the matrix pixel of the image. After convolving, the convolved feature which is the output of the previous layer, will be the input for the next layer. If the pixel in the image match the pixel of the filter, the pixel in convolved feature will be very high, if there's nothing related to the **filter** in the image, then the pixel will be very low in the convolved feature, which is the next layer.  
 
-_Time takes to run the filter = ((height*width)of image)/stride_
+>> _Time takes to run the filter = ((height*width)of image)/stride_  
+
+Good example to illustrate the working of filter on image.  
+![Filter on image](/images/filteronimage.png)  
+As you can see, there are few types of filter, which to scan through the image and convolve to the next layer, which with depth(equal to the number of filters used).  
+
+
 
 
