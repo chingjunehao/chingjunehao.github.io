@@ -20,11 +20,14 @@ _This post is written by summarizing few blog post that explained CNN with addin
 More intense learning on CNN(with code explained):
 * [CS231n by Stanford University](http://cs231n.github.io/convolutional-networks/#conv)
 Playing around with the filter to get the concept of CNN:
-* [](http://setosa.io/ev/image-kernels/)
+* [Image Kernel by Victor Powell](http://setosa.io/ev/image-kernels/)
 
-> ConvNets are good at finding patterns, which is to capture local "spatial"(things that next to one another) patterns of data, so it's > > best to apply on image because the patterns(Pattern in the images mean that the position of the data matters to us)in the image are the > most common one, and if the data fails to be made to look like an image, CNN will be less useful. 
-> Depends on the problem and decide to which architecture of the network to be used on the problems.
-> CNN is separated into 2 parts:
->> Feature learning
->> Classification
+> ConvNets are good at finding patterns, which is to capture local "spatial"(things that next to one another) patterns of data, so it's  best to apply on image because the patterns(Pattern in the images mean that the position of the data matters to us)in the image are the  most common one, and if the data fails to be made to look like an image, CNN will be less useful. 
+**Depends on the problem and decide to which architecture of the network to be used on the problems.**
+Convolutional Neural Networks is separated into 2 parts:
+* Feature learning
+* Classification
+
+> _Images are a matrix of pixel values._ 
+[**Channel**](https://en.wikipedia.org/wiki/Channel_(digital_image)) is a conventional term used to refer to a certain component of an image. An image from a standard digital camera will have three channels – red, green and blue(RGB) – you can imagine those as three 2d-matrices stacked over each other (one for each color), each having pixel values in the range 0 to 255.While a grayscale image, has just one channel. The value of each pixel in the matrix will range from 0 to 255 – zero indicating black and 255 indicating white.
  
