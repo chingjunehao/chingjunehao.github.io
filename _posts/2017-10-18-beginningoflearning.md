@@ -1,10 +1,12 @@
 ---
 layout: post
-title: Here's the bigbig of tech
+title: Understanding Convolutional Neural Networks
 published: true
 comments: true
 permalink: /learningblog/
 category: learning
 ---
 
-hehehhee
+<i>This post is written by summarizing few blog post that explained CNN with adding some of my ideas.</i>
+
+![LeNet](/images/LeNet.png){:class="img-responsive"}
