@@ -153,7 +153,7 @@ Remember that larger filters like a 3x3x128 filter would also learn to summarize
   
 So, they are used for two reasons:  
 * Dimensionality reduction: 
- - When performing larger size convolutions (spatial 3x3 or 5x5...) over a large number of feature maps, bringing down the dimensions in depth (# feature maps) reduces computations dramatically. This is done in GoogLeNet Inception modules (2).  
+  - When performing larger size convolutions (spatial 3x3 or 5x5...) over a large number of feature maps, bringing down the dimensions in depth (# feature maps) reduces computations dramatically. This is done in GoogLeNet Inception modules (2).  
 * Since ReLU will be applied again, it is yet another non-linearity that can be helpful.
  
  
