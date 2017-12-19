@@ -22,8 +22,8 @@ _So, why not?_
 ### The content in this blog can be separated into 3 parts:  
 * My thoughts on some issues/technologies
 * Machine Learning
-* Travelling
-
+* Travelling  
+  
 **If you have any questions/comments on things I wrote, feel free to comment below! :) ** 
 
 
