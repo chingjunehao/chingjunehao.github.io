@@ -24,6 +24,6 @@ _So, why not?_
 * Machine Learning
 * Travelling  
   
-**If you have any questions/comments on things I wrote, feel free to comment below! :) ** 
+#### If you have any questions/comments on things I wrote, feel free to comment below! :) 
 
 
