@@ -25,7 +25,7 @@ More intense learning on CNN(with code explained):
 Playing around with the filter to get the concept of CNN:
 * [Image Kernel by Victor Powell](http://setosa.io/ev/image-kernels/)  
 
-Course I highly recommended:  
+Course I highly recommend for beginners:  
 * [Deep Learning Specialization by Andrew Ng](https://www.coursera.org/specializations/deep-learning)
 
 > ConvNets are good at finding patterns, which is to capture local "spatial"(things that next to one another) patterns of data, so it's  best to apply on image because the patterns(Pattern in the images mean that the position of the data matters to us)in the image are the  most common one, and if the data fails to be made to look like an image, CNN will be less useful.  
