@@ -8,7 +8,9 @@ I'm a first year undergraduate student currently studying Computer Science at Mu
 
 I love travelling around to meet new people and trying out new things.
 
-I'm interested in the field of machine learning and debate as well.  
+I'm interested in the field of machine learning, psychology and debate as well.  
+
+I post things about traveling and also machine learning.
   
 _Nothing much more..._
 
