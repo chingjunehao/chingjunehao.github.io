@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Singapore trip #5
-published: false
+published: true
 permalink: /travelblog/
 category: travelling
 ---
