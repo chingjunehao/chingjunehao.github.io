@@ -4,13 +4,9 @@ title: About
 permalink: /about/
 published: true
 ---
-I'm a first year undergraduate student currently studying Computer Science at Multimedia University, Malaysia.
+I'm a first year undergraduate student currently studying Computer Science at Multimedia University, Malaysia. Apart from that, I strengthen my machine learning and image processing skills with interning at [coqnitics](http://coqnitics.com/). Also, I'm a big fans of One piece! Haha!
 
-I love travelling around to meet new people and trying out new things.
-
-I'm interested in the field of machine learning, psychology and debate as well.  
-
-I post things about traveling and also machine learning.
+I love travelling around to meet new people and trying out new things. I'm interested in the field of machine learning, psychology and debate as well. I post things about traveling, machine learning and things I learnt.
   
 _Nothing much more..._
 
