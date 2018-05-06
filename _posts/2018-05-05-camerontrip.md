@@ -17,7 +17,6 @@ Here's some of the photos of his flowers and the lower garden!
 ![f3](/images/flower3.jpg)
 * Look at all those beautiful flowers!
 
-![f4](/images/flower4.jpg)
 ![f5](/images/flower5.jpg)
 * His flower garden! (Most of the family business in Cameron Highland is planting flowers/vegetables and sell to the markets)
 
