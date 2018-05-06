@@ -36,7 +36,7 @@ On that day, we visited mountain Brinchang, the highest mountain of Cameron High
 
 After visiting the nature in Cameron Highland, we go to the famous restaurant ar Tanah Rata of Cameron Highland, [Jasmine Cafe](https://www.facebook.com/pages/Jasmine-Cafe-Tanah-Rata-Camerons/192263030816018).
 
-![sd](/images/smokedduck.jpg)
+![sd](/images/smokedduck.png)
 * The smoked duck! This food is a must if you visit there!
 
 At night, we had fun in his home and had a crazy bbq session.
