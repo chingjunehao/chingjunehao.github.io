@@ -57,11 +57,3 @@ Lastly, if you have a friend with pick-up car, your journey will be doubled the 
 
 
 
-
-
-
-
-
-
-
-https://www.facebook.com/pages/Jasmine-Cafe-Tanah-Rata-Camerons/192263030816018
