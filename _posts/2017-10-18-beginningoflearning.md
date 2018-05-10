@@ -84,7 +84,7 @@ As you can see, there are few types of filter, which to scan through the image a
  
 #### Padding(Zero-padding)
 In the early stage, we want to preserve as much information of an image as possible, so we can extract low level features.  
-Padding can preserve the dimension of the imageas well, or in another name - "same convoution".(Example in the image)  
+Padding can preserve the dimension of the imageas well, or in another name - "same convolution".(Example in the image)  
 ![Padding](/images/padding.png)  
 > Adding zero-padding is also called wide convolution, and not using zero-padding would be a narrow convolution.  
 Formula:  
@@ -101,11 +101,11 @@ Real-world example. **The Krizhevsky et al. architecture** that won the _ImageNe
 > According to Andrew Ng, if it's not an integer, we can use floor() function to round it down.  
 
 #### Number of filter(depth of the layers)
-_Example: Image: 6x6x3, filter: 3x3x3_  
-Channel of filter must be same as the channel of the image, after convolving, will get 4x4xn, n is depends on the number of filter you use, in another words, means that depends on the number of feature detector you use.  
+Example: 6x6x3 image with four 3x3 filter.
+After convolving, will get 4x4xn, n is depends on the number of filter you use, in another words, means that depends on the number of feature detector you use. In this case, n will be 4.
 
 #### Size of the filter
-Size of the filter usually is odd number so that the filter has the "central pixel"/"central vision" so to know the position of the  filter. As if f was even, then you need some asymmetric padding, or it's only f is not that this type of same convolution gives a natural padding. We can pad the same dimension all around them, pad more on the left and pad less on the right or something asymmetric.
+Size of the filter usually is odd number so that the filter has the "central pixel"/"central vision" so to know the position of the  filter. As if size of filter is even, then you need some asymmetric padding, or it's only f is not that this type of same convolution gives a natural padding. We can pad the same dimension all around them, pad more on the left and pad less on the right or something asymmetric.
  
 ### 2. Introducing Non-Linearity, ReLU (Rectified Linear Units) to the Layers
  > It could be other activation function, but by far ReLU works the best.  
@@ -115,7 +115,8 @@ In basic terms, this layer just changes all the negative activations to 0.
 _The reason that we apply non-linearities to the function is that Convolution is a linear operation – element wise matrix multiplication and addition, so we account for non-linearity by introducing a non-linear function like ReLU, prevent from computing the linear function, which will be a bad model._  
 
 
-ReLU helps in solving the vanishing gradient problem, which is a problem when we train the neural network using gradient-based algorithm, like sigmoid, it will squish all the gradient value into 0-1, then when performing the gradient descent, the gradient will be updated very small each time, and the time will take longer to complete.(Learning becomes slow.)[ReLU helps in solving this problem.] (https://www.quora.com/What-is-the-vanishing-gradient-problem)  
+ReLU helps in solving the vanishing gradient problem, which is a problem when we train the neural network using gradient-based algorithm, like sigmoid, it will squish all the gradient value into 0-1, then when performing the gradient descent, the gradient will be updated very small each time, and the time will take longer to complete.(Learning becomes slow.)
+[ReLU helps in solving this problem.](https://www.quora.com/What-is-the-vanishing-gradient-problem)  
 ![ReLUimage](/images/ReLUimage.png)
 Other non linear functions such as tanh or sigmoid can also be used instead of ReLU, but ReLU has been found to perform better in most situations.  
   
@@ -144,27 +145,27 @@ In particular, pooling:
 ### 4. Dropout Layer 
 _(Not in the traditional architecture of CNN but very useful, because helps a lot in fighting overfitting)_  
   
-The idea of dropout is simplistic in nature. This layer “drops out” a random set of activations in that layer by setting them to zero. Simple as that. Now, what are the benefits of such a simple and seemingly unnecessary and counterintuitive process? Well, in a way, it forces the network to be redundant. By that I mean the network should be able to provide the right classification or output for a specific example even if some of the activations are dropped out. It makes sure that the network isn’t getting too “fitted” to the training data and thus helps alleviate the overfitting problem.  
+The idea of dropout is simplistic in nature. This layer “drops out” a random set of activations in that layer by setting them to zero. Simple as that. Now, what are the benefits of such a simple and seemingly unnecessary and counterintuitive process? Well, in a way, it forces the network to be redundant. By that I mean the network should be able to provide the right classification or output for a specific example even if some of the activations are dropped out. It makes sure that the network isn’t getting too “fitted” to the training data and thus helps alleviating the overfitting problem.  
 An important note is that this layer is only used during training, and not during test time.  
 
-### 5. Network in Network Layer (1X1 convolution)  
+### 5. Network in Network Layer (1x1 convolution)  
 _(Not in the traditional architecture of CNN but very useful, because helps in generating more features, and making network deeper in a computational inexpensive way.)_  
 
 A network in network layer refers to a conv layer where a 1 x 1 size filter is used.   
 1x1 convolutions span a certain depth, so we can think of it as a 1 x 1 x N convolution where N is the number of filters applied in the layer. Effectively, this layer is performing a N-D element-wise multiplication where N is the depth of the input volume into the layer.  
   
 Example:  
-If the previous layer has 128 feature maps (say) then "1x1 convolutions" are convolutions across all these feature maps with filters each of size 1x1x128. Say one chooses to have 64 of these 1x1x128 dim filters, then the result will be 64 features maps, each the same size as before. View each output feature map as "per-pixel" projections (dot-product) onto a lower dimensional space using a single learned filter (weights tied) across all feature maps. Basically, they just crush 128 feature maps (representational responses to 128 learned filters) into 64 feature maps ignoring the spatial dimension.  
+If the previous layer has 128 feature maps then "1x1 convolutions" are convolutions across all these feature maps with filters each of size 1x1x128. Say one chooses to have 64 of these 1x1x128 dim filters, then the result will be 64 features maps, each the same size as before. View each output feature map as "per-pixel" projections (dot-product) onto a lower dimensional space using a single learned filter (weights tied) across all feature maps. Basically, they just crush 128 feature maps (representational responses to 128 learned filters) into 64 feature maps ignoring the spatial dimension.  
   
-Remember that larger filters like a 3x3x128 filter would also learn to summarize feature responses across all feature maps so in this way all size filters do the same thing. The only difference is that 1x1 (learned) filters ONLY do this across feature-maps where 3x3 filters (say) also consider local spatial correlations.  
+Remember that larger filters like a 3x3x128 filter would also learn to summarize feature responses across all feature maps so in this way all size filters do the same thing. The only difference is that 1x1 (learned) filters ONLY do this across feature-maps where 3x3 filters also consider local spatial correlations.  
   
-So, they are used for two reasons:  
+So, it is used for two reasons:  
 * Dimensionality reduction: 
-  - When performing larger size convolutions (spatial 3x3 or 5x5...) over a large number of feature maps, bringing down the dimensions in depth (# feature maps) reduces computations dramatically. This is done in GoogLeNet Inception modules (2).  
+  - When performing larger size convolutions (spatial 3x3 or 5x5...) over a large number of feature maps, bringing down the dimensions in depth (# feature maps) reduces computations dramatically. This is done in [GoogLeNet Inception modules](https://www.quora.com/How-does-the-Inception-module-work-in-GoogLeNet-deep-architecture) to get the network in to deeper without overfitting.  
 * Since ReLU will be applied again, it is yet another non-linearity that can be helpful.  
   
   
-Put together the parts and from the feature learning part.   
+Put together the parts and form the feature learning part, before sending to FC to classify the image.
 ![Featurelearning](/images/featurelearning.png)  
 
 ****
@@ -175,7 +176,7 @@ Essentially the convolutional layers are providing a meaningful, low-dimensional
   
 The whole classification part is a fully connected layer, which starts with **flattening step**, then **fully connected layer**(which is layer full of connections to do classification, also called dense layer) and end with **softmax function**.  
   
-ANN classifier needs individual features, just like any other classifier. This means it needs a feature vector.  
+Artificial Neural Network classifier needs individual features, just like any other classifier. This means it needs a feature vector.  
 
 #### 1. Flattening Step  
 Therefore, you need to convert the output of the convolutional part of the CNN into a 1D feature vector, to be used by the ANN part of it. This operation is called flattening. It gets the output of the convolutional layers, flattens all its structure to create a single long feature vector to be used by the dense layer for the final classification.(Like the long vector in the image below.)  
@@ -188,16 +189,15 @@ Neurons in a fully connected layer have full connections to all activations in t
   
 ![FClayer](/images/fullyconnectedlayers.jpg)    
 Their activations can hence be computed with a matrix multiplication followed by a bias offset.   
-Apart from classification, adding a fully-connected layer is also a (usually) cheap way of learning non-linear combinations of these features. Most of the features from convolutional and pooling layers may be good for the classification task, but combinations of those features might be even better.  
+Adding a fully-connected layer is a (usually) cheap way of learning non-linear combinations of these features. Most of the features from convolutional and pooling layers may be good for the classification task, but combinations of those features might be even better.  
   
-**In this layer, where the weight and bias are like in the normal neural network, use cost to compute the loss function, gradient descent to optimize parameters and reduce cost function.**  
+**In this layer, where the weight and bias are same as the normal neural network, use cost to compute the loss function, gradient descent to optimize parameters and reduce cost function.**  
 
 #### 3. Softmax function
-The sum of output probabilities from the Fully Connected Layer is 1.  
-This is ensured by using the Softmax as the activation function in the output layer of the Fully Connected Layer.  
+The output from the Fully Connected Layer is then passed through the softmax function. 
 The [Softmax](http://cs231n.github.io/linear-classify/#softmax) function takes a vector of arbitrary real-valued scores and squashes it to a vector of values between zero and one that sum to one.  
 
-**Putting the whole Convolutional Neural Networks together:**  
+**Putting all the parts of Convolutional Neural Networks together:**  
 ![CNN](/images/cnn.png)  
 
 ****
