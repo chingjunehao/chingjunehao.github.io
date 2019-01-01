@@ -8,6 +8,7 @@ I'm an undergraduate student currently studying Computer Science at Multimedia U
 
 I love travelling around to meet new people and trying out new things. 
 
+[CV]({{ site.url }}/assets/resume_JuneHao.pdf)
 ### Reach me at
 
 [junehaoc@gmail.com](mailto:junehaoc@gmail.com)
