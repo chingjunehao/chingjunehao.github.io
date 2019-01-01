@@ -3,7 +3,7 @@ layout: post
 title: Singapore trip #5
 published: false
 permalink: /travelblog/
-comments: true
+comments: false
 category: travelling
 ---
 This is the fifth time I travelled to Singapore as a Malaysian. I kept telling myself to update the travelling blog since my second visit to Singapore but having too much works crunched on me, so it delayed until today.
