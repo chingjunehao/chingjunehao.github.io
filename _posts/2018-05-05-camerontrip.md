@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Cameron Trip
-published: true
+published: false
 permalink: /travelblog/
-comments: true
+comments: false
 category: travelling
 ---
 
