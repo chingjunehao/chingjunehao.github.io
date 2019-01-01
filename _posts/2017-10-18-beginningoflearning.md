@@ -3,7 +3,7 @@ layout: post
 title: Beginner's guide to Understanding Convolutional Neural Networks
 published: true
 comments: true
-permalink: /learningblog/
+permalink: /understanding-cnn/
 category: learning
 ---
 
