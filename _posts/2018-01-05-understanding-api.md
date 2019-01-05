@@ -7,8 +7,8 @@ permalink: /understanding-api
 category: learning
 ---
 
-The first time I heard of API was backed in 2 years when I was taking Foundation in IT. The first reaction was like 
-"The heck? API? Application program interface? So? What can we do with it?" I was completely blurred and have no idea with it.
+The first time I heard of API was when I started learning programming. The first reaction was like "The heck? API? Application program interface? So? What can we do with it?" 
+I was completely blurred and have no idea with it.
 
 Then, I go and research about "API", there comes another term - RESTful. Which threw me into a deep sea of confusion. So, I 
 decided to write a post on this to help those who struggling with the term of API or RESTful API.
@@ -28,4 +28,5 @@ In a simple explanation, it is a function that uses the rules of GET, PUT, POST 
 that hosted in a server on cloud.
 
 ### Further reading
-https://stackoverflow.com/questions/671118/what-exactly-is-restful-programming
+[StackOverflow](https://stackoverflow.com/questions/671118/what-exactly-is-restful-programming)
+[Code Sample](https://medium.com/python-pandemonium/build-simple-restful-api-with-python-and-flask-part-1-fae9ff66a706)
