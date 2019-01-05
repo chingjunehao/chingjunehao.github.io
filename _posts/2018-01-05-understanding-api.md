@@ -20,7 +20,7 @@ decided to write a post on this to help those who struggling with the term of AP
 Confused? Yea, me too. In a simple explanation, API is basically a function, where you pass in parameter(s), and return you result. 
 
 Then, what is a RESTful API?
-> From WhatIs
+> From WhatIs:
 > A RESTful API is an application program interface (API) that uses HTTP requests to GET, PUT, POST and DELETE data.
 
 In a simple explanation, it is a function that uses the rules of GET, PUT, POST and DELETE to manipulate the data. Which is a function
