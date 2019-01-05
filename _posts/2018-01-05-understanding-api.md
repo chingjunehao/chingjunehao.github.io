@@ -28,4 +28,4 @@ that hosted in a server on cloud.
 
 ### Further reading
 [StackOverflow](https://stackoverflow.com/questions/671118/what-exactly-is-restful-programming),
-[Code Sample](https://medium.com/python-pandemonium/build-simple-restful-api-with-python-and-flask-part-1-fae9ff66a706)
+[Code Tutorial](https://medium.com/python-pandemonium/build-simple-restful-api-with-python-and-flask-part-1-fae9ff66a706)
