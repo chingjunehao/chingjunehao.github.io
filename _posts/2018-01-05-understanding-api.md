@@ -17,8 +17,7 @@ decided to write a post on this to help those who struggling with the term of AP
 > In computer programming, an application programming interface (API) is a set of subroutine definitions, communication protocols, 
 > and tools for building software.
 
-Confused? Yea, me too. In a simple explanation, you think think API is basically a function, where you pass in parameter(s), and 
-API will return you result. 
+Confused? Yea, me too. In a simple explanation, API is basically a function, where you pass in parameter(s), and return you result. 
 
 Then, what is a RESTful API?
 > From WhatIs
@@ -28,5 +27,5 @@ In a simple explanation, it is a function that uses the rules of GET, PUT, POST 
 that hosted in a server on cloud.
 
 ### Further reading
-[StackOverflow](https://stackoverflow.com/questions/671118/what-exactly-is-restful-programming)
+[StackOverflow](https://stackoverflow.com/questions/671118/what-exactly-is-restful-programming),
 [Code Sample](https://medium.com/python-pandemonium/build-simple-restful-api-with-python-and-flask-part-1-fae9ff66a706)
