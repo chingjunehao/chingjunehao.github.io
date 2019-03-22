@@ -7,7 +7,7 @@ permalink: /understanding-api
 category: learning
 ---
 
-The first time I heard of API was when I started learning programming. The first reaction was like "The heck? API? Application program interface? So? What can we do with it?" 
+The first time I heard of API was when I started learning programming. The first reaction was like "API? Application program interface? So? What can we do with it?" 
 I was completely blurred and have no idea with it.
 
 Then, I go and research about "API", there comes another term - RESTful. Which threw me into a deep sea of confusion. So, I 
