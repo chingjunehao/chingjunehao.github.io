@@ -47,7 +47,7 @@ Course I highly recommend for beginners:
 _Example of 5x5 image using only 1 and 0 pixel to illustrate_  
 ![Example of filter](/images/convfilter.png)  
 _Example of 3x3 filter using only 1 and 0 pixel to illustrate_  
-> Think of this 2 image as a matrix with number, 0 act as white and 1 act as black.
+> Think of this 2 image as a matrix with number, 0 act as black and 1 act as white.
 
 At this point, this filter is like a "X" detector for the image, which will act like a sliding window(animation down there), to search the "X" pattern in the image. If want to detect another pattern, will use another type of filter to slide around the images, here is where the depth of next layer come in, let's say you use 3 filter, which is "X", "O" and "I" detector to slide through the images, then the next layer of the network will be depth=3. (Will explain more down there.)  
 The matrix can also be the color contrast, texture, etc. of the images.  
