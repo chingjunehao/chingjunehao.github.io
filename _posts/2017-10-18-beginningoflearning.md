@@ -64,12 +64,12 @@ As you can see, there are few types of filter, which to scan through the image a
 
 ![Convolution](/images/convolve.gif)  
  Great animation to explain how the feature detector affect the output and depth of output in the feature map.  
- For example the first edge detector is "\", it will output the image where the most obvious part of the image will be the part contained edges "\". Same goes to the second edge detector "/".  
+ For example the first edge detector is ""\", it will output the image where the most obvious part of the image will be the part contained edges ""\". Same goes to the second edge detector "/".  
  
  ### Parameters that control the behavior of each convolved layer
  * **Stride**
  * **Padding(Zero-padding)**
- * **Number of filter(depth of the layers)**
+ * **Number of filter(depth of the next layer)**
  * **Size of the filter**
 
 ****
@@ -100,7 +100,7 @@ Real-world example. **The Krizhevsky et al. architecture** that won the _ImageNe
 
 > According to Andrew Ng, if it's not an integer, we can use floor() function to round it down.  
 
-#### Number of filter(depth of the layers)
+#### Number of filter(depth of the next layer)
 Example: 6x6x3 image with four 3x3 filter.
 After convolving, will get 4x4xn, n is depends on the number of filter you use, in another words, means that depends on the number of feature detector you use. In this case, n will be 4.
 
