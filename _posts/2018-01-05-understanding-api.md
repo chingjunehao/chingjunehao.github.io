@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Let's talk about API
-published: true
+published: false
 comments: true
 permalink: /understanding-api
 category: learning
