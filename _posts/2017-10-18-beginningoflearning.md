@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Beginner's guide to Understanding Convolutional Neural Networks
-published: true
+published: false
 comments: true
 permalink: /understanding-cnn
 category: learning
