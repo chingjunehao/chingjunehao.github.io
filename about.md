@@ -1,13 +1,11 @@
 ---
 layout: page
 title: About
-permalink: /about/
+permalink: /aboutme/
 published: false
 ---
-I'm an undergraduate student currently studying Computer Science at Multimedia University, Malaysia. 
-Previously at [Coqnitics](http://coqnitics.com/), [BotAhead](https://botahead.com/), [Compliy](https://compliy.com/) and [Parcel Daily](https://www.parceldaily.com/).
+I'm an undergraduate student currently studying Computer Science Malaysia. 
 
-[CV]({{ site.url }}/assets/resume_JuneHao.pdf)
 ### Reach me at
 
-[junehaoc@gmail.com](mailto:junehaoc@gmail.com)
+
