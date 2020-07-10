@@ -2,7 +2,7 @@
 layout: page
 title: About
 permalink: /about/
-published: true
+published: false
 ---
 I'm an undergraduate student currently studying Computer Science at Multimedia University, Malaysia. 
 Previously at [Coqnitics](http://coqnitics.com/), [BotAhead](https://botahead.com/), [Compliy](https://compliy.com/) and [Parcel Daily](https://www.parceldaily.com/).
